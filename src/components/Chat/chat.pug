@@ -1,7 +1,8 @@
 .view
   .channel
     ul
-      li(v-for="(channel) in channels") {{ channel }}
-  .channel-name
+      li(v-for="(channel) in channels")
+        router-link(:to="{name: 'channel', params: { channelName: channel }}") {{ channel }}
+  .channel-name {{ $route.params.channelName }}
   .messages
   .form

@@ -14,7 +14,7 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/channel',
+      path: '/channel/:channelName',
       name: 'channel',
       component: Chat
     }
