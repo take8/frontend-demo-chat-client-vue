@@ -7,6 +7,7 @@ export default {
 </script>
 
 <style>
+/* cssnext */
 :root {
   --sample-weight: 900;
 }
