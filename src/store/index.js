@@ -13,7 +13,8 @@ Vue.use(Vuex)
 
 // コンポーネント間にまたがって使用されるデータ
 const state = {
-  messages: []
+  messages: [],
+  channels: []
 }
 
 export default new Vuex.Store({
