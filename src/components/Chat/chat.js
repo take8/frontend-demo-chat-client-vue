@@ -1,11 +1,14 @@
 import { mapGetters, mapActions } from 'vuex'
-import { SET_MESSAGE, GET_CHANNELS } from '../../store/mutation-types'
+import {
+  GET_CHANNELS
+} from '../../store/mutation-types'
 
 export default {
   name: 'chat',
 
   mounted () {
     this.GET_CHANNELS()
+    this.GET_MESSAGES(this.$route.params.channelName)
   },
 
   // 算出プロパティ(キャッシュされる)
@@ -20,12 +23,16 @@ export default {
   methods: {
     // actions
     ...mapActions([
-      SET_MESSAGE,
-      GET_CHANNELS
+      GET_CHANNELS,
+      'GET_MESSAGES',
+      'POST_MESSAGES'
     ]),
 
     sendMessage () {
-      this.SET_MESSAGE(this.message)
+      this.POST_MESSAGES({
+        'channelName': this.$route.params.channelName,
+        'message': this.message
+      })
       this.message = ''
     }
   },
