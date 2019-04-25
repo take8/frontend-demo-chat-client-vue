@@ -1,0 +1,5 @@
+ul
+  li(v-for="(message) in messages")
+    .message {{message.body}}
+    .date {{message.date}}
+    .name {{message.user.name}}

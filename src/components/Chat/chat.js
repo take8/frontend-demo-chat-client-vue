@@ -2,6 +2,7 @@ import { mapGetters, mapActions } from 'vuex'
 import {
   GET_CHANNELS
 } from '../../store/mutation-types'
+import MessageList from '../MessageList'
 
 export default {
   name: 'chat',
@@ -35,6 +36,11 @@ export default {
       })
       this.message = ''
     }
+  },
+
+  components: {
+    // key名: テンプレートに記載する際の名前
+    'message-list': MessageList
   },
 
   // data: 現在のコンポーネントでのみ有効なデータの定義
