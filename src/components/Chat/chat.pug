@@ -1,12 +1,13 @@
-.view
-  .channel
+el-container
+  el-aside
     ul
       li(v-for="(channel) in channels")
         router-link(:to="{name: 'channel', params: { channelName: channel }}") {{ channel }}
-  .channel-name {{ $route.params.channelName }}
-  .messages
-    //- ":"は"v-bind:"の省略形
-    message-list(:messages='messages')
-  .form
-    input(type="text" v-model="message")
-    input(type="button" value="SEND" @click="sendMessage")
+  el-container
+    el-header {{ $route.params.channelName }}
+    el-main
+      //- ":"は"v-bind:"の省略形
+      message-list(:messages='messages')
+    el-footer
+      el-input(type='text' v-model="message")
+      el-button("@click"="sendMessage") SEND
