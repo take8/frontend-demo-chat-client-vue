@@ -24,3 +24,10 @@ vue init webpack frontend-demo-chat-client-vue
 cd frontend-demo-chat-client-vue
 npm run dev
 ```
+
+## 技術スタック
+
+- SPA Framework: Vue
+- Language: JavaScript
+- CSS Framework: Element
+- HTTP Client: なし(fetch API)
